@@ -72,7 +72,7 @@
 
 // Author info of this build printed to the host during boot and M115
 // <CHANGED>
-#define STRING_CONFIG_H_AUTHOR "André Karge" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Andre Karge" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -655,10 +655,10 @@
 #define X_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop. MPCNC
 #define Y_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop. MPCNC
 #define Z_MIN_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop. MPCNC
-#define X_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop. MPCNC
-#define Y_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop. MPCNC
-#define Z_MAX_ENDSTOP_INVERTING true // Set to true to invert the logic of the endstop. MPCNC
-#define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
+#define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define Z_MIN_PROBE_ENDSTOP_INVERTING true // Set to true to invert the logic of the probe. MPCNC
 
 /**
  * Stepper Drivers
@@ -1102,7 +1102,8 @@
  */
 
 // Min software endstops constrain movement within minimum coordinate bounds
-#define MIN_SOFTWARE_ENDSTOPS
+// <CHANGED>
+//#define MIN_SOFTWARE_ENDSTOPS MPCNC
 #if ENABLED(MIN_SOFTWARE_ENDSTOPS)
   #define MIN_SOFTWARE_ENDSTOP_X
   #define MIN_SOFTWARE_ENDSTOP_Y
@@ -1110,7 +1111,8 @@
 #endif
 
 // Max software endstops constrain movement within maximum coordinate bounds
-#define MAX_SOFTWARE_ENDSTOPS
+// <CHANGED>
+//#define MAX_SOFTWARE_ENDSTOPS MPCNC
 #if ENABLED(MAX_SOFTWARE_ENDSTOPS)
   #define MAX_SOFTWARE_ENDSTOP_X
   #define MAX_SOFTWARE_ENDSTOP_Y
